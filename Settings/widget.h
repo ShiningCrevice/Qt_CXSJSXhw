@@ -36,6 +36,7 @@ private slots:
 
 private:
     Ui::Widget *ui;
+    bool darkMode;
 
 };
 

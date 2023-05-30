@@ -24,6 +24,7 @@
   </property>
   <property name="font">
    <font>
+    <pointsize>16</pointsize>
     <bold>true</bold>
    </font>
   </property>
@@ -36,16 +37,16 @@
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>440</y>
-     <width>151</width>
-     <height>61</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>华文中宋</family>
-     <pointsize>20</pointsize>
+     <pointsize>16</pointsize>
      <italic>false</italic>
      <bold>false</bold>
     </font>
@@ -54,9 +55,13 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 20pt &quot;华文中宋&quot;;
+    <string notr="true">font: 16pt &quot;华文中宋&quot;;
 color: rgb(0, 0, 0);
-background-color: rgb(231, 255, 166);
+background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  
+                                      stop: 0 rgb(209, 255, 202),
+                                      stop: 0.495 rgb(170, 255, 127),
+                                      stop: 0.505 rgb(170, 255, 127), 
+                                      stop: 1 rgb(209, 255, 202));
 border-radius: 15px;</string>
    </property>
    <property name="text">
@@ -67,8 +72,8 @@ border-radius: 15px;</string>
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>80</y>
-     <width>351</width>
+     <y>90</y>
+     <width>361</width>
      <height>241</height>
     </rect>
    </property>
@@ -80,6 +85,7 @@ border-radius: 15px;</string>
         <property name="font">
          <font>
           <family>华文中宋</family>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -129,6 +135,7 @@ border-radius: 15px;</string>
         <property name="font">
          <font>
           <family>华文中宋</family>
+          <pointsize>16</pointsize>
           <bold>true</bold>
          </font>
         </property>
