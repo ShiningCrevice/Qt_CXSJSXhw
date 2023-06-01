@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/close.png</file>
+        <file>Image/delete.png</file>
+        <file>Image/help.png</file>
+        <file>Image/OPEN.png</file>
+        <file>Image/Open-2.png</file>
+        <file>Image/set.png</file>
+        <file>Image/plus.png</file>
+        <file>Image/eye.png</file>
+    </qresource>
+</RCC>

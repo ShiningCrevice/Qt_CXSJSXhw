@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/ddl.jpg</file>
+        <file>res/Image/close.png</file>
+        <file>res/Image/delete.png</file>
+        <file>res/Image/eye.png</file>
+        <file>res/Image/help.png</file>
+        <file>res/Image/OPEN.png</file>
+        <file>res/Image/Open-2.png</file>
+        <file>res/Image/plus.png</file>
+        <file>res/Image/set.png</file>
+    </qresource>
+</RCC>

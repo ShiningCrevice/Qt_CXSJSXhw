@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Confirm</class>
+ <widget class="QWidget" name="Confirm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>181</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>110</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>14</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+	background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  
+                                      stop: 0 rgb(209, 255, 202),
+                                      stop: 0.495 rgb(170, 255, 127),
+                                      stop: 0.505 rgb(170, 255, 127), 
+                                      stop: 1 rgb(209, 255, 202));
+	border: none;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string>确认</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>110</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>14</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+	background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  
+                                      stop: 0 rgb(209, 255, 202),
+                                      stop: 0.495 rgb(170, 255, 127),
+                                      stop: 0.505 rgb(170, 255, 127), 
+                                      stop: 1 rgb(209, 255, 202));
+	border: none;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
