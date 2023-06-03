@@ -10,36 +10,45 @@ CONFIG += c++17
 
 SOURCES += \
     add.cpp \
+    check.cpp \
     class.cpp \
     ddl.cpp \
     delete.cpp \
     event_con.cpp \
+    helpwidget.cpp \
     main.cpp \
     main_scene.cpp \
     manage_task.cpp \
     meet.cpp \
-    task.cpp
+    task.cpp \
+    widget.cpp
 
 HEADERS += \
     add.h \
+    check.h \
     class.h \
     config.h \
     ddl.h \
     delete.h \
     event_con.h \
+    helpwidget.h \
     main_scene.h \
     manage_task.h \
     meet.h \
-    task.h
+    task.h \
+    widget.h
 
 FORMS += \
     add.ui \
+    check.ui \
     class.ui \
     ddl.ui \
     delete.ui \
+    helpwidget.ui \
     main_scene.ui \
     meet.ui \
-    task.ui
+    task.ui \
+    widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

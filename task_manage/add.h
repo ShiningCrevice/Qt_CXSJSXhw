@@ -26,6 +26,7 @@ public:
     Class son_cla;
     DDL son_ddl;
     Meet son_meet;
+    void show_self();
 signals:
     void showMain();
 

@@ -21,6 +21,7 @@ public:
     ~task();
     void initScene();
     void paintEvent(QPaintEvent *event);
+    void show_self();
 
     Add son_add;
     Delete son_del;

@@ -9,5 +9,6 @@
         <file>res/Image/Open-2.png</file>
         <file>res/Image/plus.png</file>
         <file>res/Image/set.png</file>
+        <file>res/Image/return.png</file>
     </qresource>
 </RCC>

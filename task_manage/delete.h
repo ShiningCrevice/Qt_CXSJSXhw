@@ -26,6 +26,7 @@ public:
     void playGame();
     void getlist();
     void initScene();
+    void show_self();
 signals:
     void showMain();
 private slots:
