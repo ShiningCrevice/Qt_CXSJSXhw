@@ -21,6 +21,7 @@ public:
     ~Class();
     void initScene();
     void paintEvent(QPaintEvent *event);
+    void show_self();
 signals:
     void showMain();
 private slots:

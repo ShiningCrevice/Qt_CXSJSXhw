@@ -4,6 +4,9 @@
 #include <QLineEdit>
 #include <QMessageBox>
 
+#include <darkModeFunctions.h>
+extern bool darkMode;
+
 Class::Class(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Class)
@@ -35,7 +38,7 @@ void Class::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-    setStyleSheet("background-color: rgb(196,230,255);");
+//    setStyleSheet("background-color: rgb(196,230,255);");
 }
 void Class::on_pushButton_clicked() // 取消
 {
@@ -86,4 +89,31 @@ void Class::on_timeEdit_2_userTimeChanged(const QTime &time)
 void Class::on_comboBox_activated(int index)
 {
     temp.week_type = index;
+}
+
+void Class::show_self() {
+    if (darkMode) {
+        setStyleSheet("background-color: rgb(46, 47, 48);");
+        dark_label(ui->label);
+        dark_label(ui->label_2);
+        dark_label(ui->label_3);
+        dark_label(ui->label_4);
+        dark_label(ui->label_5);
+        dark_label(ui->label_6);
+        dark_label(ui->label_7);
+        dark_button(ui->pushButton);
+        dark_button(ui->pushButton_2);
+    }
+    else {
+        setStyleSheet("background-color: rgb(196, 130, 255);");
+        light_label(ui->label);
+        light_label(ui->label_2);
+        light_label(ui->label_3);
+        light_label(ui->label_4);
+        light_label(ui->label_5);
+        light_label(ui->label_6);
+        light_label(ui->label_7);
+        light_button(ui->pushButton);
+        light_button(ui->pushButton_2);
+    }
 }

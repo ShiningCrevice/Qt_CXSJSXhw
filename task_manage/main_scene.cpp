@@ -75,8 +75,8 @@ void main_scene::show_myself()
                                     "stop: 0.505 rgb(170, 255, 127), "
                                     "stop: 1 rgb(209, 255, 202)); border-radius: 5px;"
                                     "color: rgb(0, 0, 0);");
-        ui->btnSet->setStyleSheet("background-color: rgb(255, 255, 255));");
-        ui->btnHelp->setStyleSheet("background-color: rgb(255, 255, 255);");
+        ui->btnSet->setStyleSheet("background-color: rgb(196, 230, 255);");
+        ui->btnHelp->setStyleSheet("background-color: rgb(196, 230, 255);");
 //        ui->tabWidget->setStyleSheet("background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);");
         ui->dateLabel->setStyleSheet("color: rgb(196, 230, 255);");
     }

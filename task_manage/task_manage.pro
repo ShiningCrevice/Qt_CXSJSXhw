@@ -12,6 +12,7 @@ SOURCES += \
     add.cpp \
     check.cpp \
     class.cpp \
+    darkModeFunctions.cpp \
     ddl.cpp \
     delete.cpp \
     event_con.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     check.h \
     class.h \
     config.h \
+    darkModeFunctions.h \
     ddl.h \
     delete.h \
     event_con.h \
