@@ -4,6 +4,9 @@
 #include <QLineEdit>
 #include <QMessageBox>
 
+#include <darkModeFunctions.h>
+extern bool darkMode;
+
 Class::Class(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Class)
@@ -35,7 +38,7 @@ void Class::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-    setStyleSheet("background-color: rgb(196,230,255);");
+//    setStyleSheet("background-color: rgb(196,230,255);");
 }
 void Class::on_pushButton_clicked() // 取消
 {
@@ -44,21 +47,30 @@ void Class::on_pushButton_clicked() // 取消
 }
 class_con temp;
 
-extern manage_task pax;
+extern manage_task paxi;
 void Class::on_pushButton_2_clicked() // 确认
 {
-    QMessageBox MBox;
-    MBox.setWindowTitle("确认");
-    MBox.setText("您确认要增加该任务吗");
-    MBox.setWindowIcon(QPixmap(GAME_ICON));
-    QPushButton *agreeBut = MBox.addButton("确认", QMessageBox::AcceptRole);
-    QPushButton *disagreeBut = MBox.addButton("返回", QMessageBox::RejectRole);
-    MBox.exec();
-    if(MBox.clickedButton() == (QAbstractButton*)agreeBut)
-    {
-        pax.Add_cla(temp);
-        emit showMain();
-        this ->hide();
+    if(temp.startTime > temp.endTime) {
+        QMessageBox MBox;
+        MBox.setWindowTitle("警告！！！");
+        MBox.setText("该课程的时间不合法！");
+        MBox.setWindowIcon(QPixmap(GAME_ICON));
+        MBox.exec();
+    }
+    else {
+        QMessageBox MBox;
+        MBox.setWindowTitle("确认");
+        MBox.setText("您确认要增加该任务吗");
+        MBox.setWindowIcon(QPixmap(GAME_ICON));
+        QPushButton *agreeBut = MBox.addButton("确认", QMessageBox::AcceptRole);
+        QPushButton *disagreeBut = MBox.addButton("返回", QMessageBox::RejectRole);
+        MBox.exec();
+        if(MBox.clickedButton() == (QAbstractButton*)agreeBut)
+        {
+            paxi.Add_cla(temp);
+            emit showMain();
+            this ->hide();
+        }
     }
 }
 void Class::on_lineEdit_3_editingFinished()
@@ -75,15 +87,49 @@ void Class::on_lineEdit_5_editingFinished()
 }
 void Class::on_timeEdit_userTimeChanged(const QTime &time)
 {
-    temp.start_hour = time.hour();
-    temp.start_min = time.minute();
+    temp.startTime = time;
 }
 void Class::on_timeEdit_2_userTimeChanged(const QTime &time)
 {
-    temp.end_hour = time.hour();
-    temp.end_min = time.minute();
+    temp.endTime = time;
 }
 void Class::on_comboBox_activated(int index)
 {
     temp.week_type = index;
 }
+
+
+void Class::on_comboBox_2_activated(int index)
+{
+    temp.day = index;
+}
+void Class::show_self() {
+    ui->lineEdit_3->clear();
+    ui->lineEdit_4->clear();
+    ui->lineEdit_5->clear();
+    if (darkMode) {
+        setStyleSheet("background-color: rgb(46, 47, 48);");
+        dark_label(ui->label);
+        dark_label(ui->label_2);
+        dark_label(ui->label_3);
+        dark_label(ui->label_4);
+        dark_label(ui->label_5);
+        dark_label(ui->label_6);
+        dark_label(ui->label_7);
+        dark_button(ui->pushButton);
+        dark_button(ui->pushButton_2);
+    }
+    else {
+        setStyleSheet("background-color: rgb(196, 230, 255);");
+        light_label(ui->label);
+        light_label(ui->label_2);
+        light_label(ui->label_3);
+        light_label(ui->label_4);
+        light_label(ui->label_5);
+        light_label(ui->label_6);
+        light_label(ui->label_7);
+        light_button(ui->pushButton);
+        light_button(ui->pushButton_2);
+    }
+}
+

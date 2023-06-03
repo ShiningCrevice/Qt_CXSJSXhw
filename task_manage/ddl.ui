@@ -167,7 +167,7 @@ font: 22pt &quot;华文中宋&quot;;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">    dateEdit-&gt;setStyleSheet(&quot;background-color: rgb(255,255,255)&quot;);
+    <string notr="true">    background-color: rgb(255, 255, 255);
     dateEdit-&gt;setFont(font);</string>
    </property>
   </widget>
@@ -219,6 +219,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -237,6 +240,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -254,6 +260,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
     <font>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

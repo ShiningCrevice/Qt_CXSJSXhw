@@ -21,6 +21,7 @@ public:
     ~Class();
     void initScene();
     void paintEvent(QPaintEvent *event);
+    void show_self();
 signals:
     void showMain();
 private slots:
@@ -38,6 +39,8 @@ private slots:
     void on_timeEdit_2_userTimeChanged(const QTime &time);
 
     void on_comboBox_activated(int index);
+
+    void on_comboBox_2_activated(int index);
 
 private:
     Ui::Class *ui;

@@ -5,18 +5,18 @@
 
 extern bool darkMode;
 
-extern manage_task pax;
+extern manage_task paxi;
 void Delete :: getlist() {
     ui->comboBox->clear();
     QStringList strList;
-    for(int i = 0; i < (int)pax.cla.size(); ++ i) {
-        strList << pax.cla[i].name;
+    for(int i = 0; i < (int)paxi.cla.size(); ++ i) {
+        strList << paxi.cla[i].name;
     }
-    for(int i = 0; i < (int)pax.meet.size(); ++ i) {
-        strList << pax.meet[i].name;
+    for(int i = 0; i < (int)paxi.meet.size(); ++ i) {
+        strList << paxi.meet[i].name;
     }
-    for(int i = 0; i < (int)pax.ddl.size(); ++ i) {
-        strList << pax.ddl[i].name;
+    for(int i = 0; i < (int)paxi.ddl.size(); ++ i) {
+        strList << paxi.ddl[i].name;
     }
     ui->comboBox->addItems(strList);
 }
@@ -63,9 +63,9 @@ void Delete::on_pushButton_3_clicked()
     if (MBox.clickedButton() == (QAbstractButton*)agreeBut) {
         if(ui->comboBox->count()) {
             int index = ui->comboBox->currentIndex();
-            if(index < (int)pax.cla.size()) pax.Del_cla(index);
-            else if(index < (int)pax.cla.size() + (int)pax.meet.size()) pax.Del_meet(index - (int)pax.cla.size());
-            else pax.Del_ddl(index - (int)pax.cla.size() - (int)pax.meet.size());
+            if(index < (int)paxi.cla.size()) paxi.Del_cla(index);
+            else if(index < (int)paxi.cla.size() + (int)paxi.meet.size()) paxi.Del_meet(index - (int)paxi.cla.size());
+            else paxi.Del_ddl(index - (int)paxi.cla.size() - (int)paxi.meet.size());
         }
         emit showMain();
         this -> hide();

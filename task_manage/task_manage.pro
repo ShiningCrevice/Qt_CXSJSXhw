@@ -12,6 +12,7 @@ SOURCES += \
     add.cpp \
     check.cpp \
     class.cpp \
+    darkModeFunctions.cpp \
     ddl.cpp \
     delete.cpp \
     event_con.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
     main_scene.cpp \
     manage_task.cpp \
     meet.cpp \
+    nothing.cpp \
     task.cpp \
     widget.cpp
 
@@ -28,6 +30,7 @@ HEADERS += \
     check.h \
     class.h \
     config.h \
+    darkModeFunctions.h \
     ddl.h \
     delete.h \
     event_con.h \
@@ -35,6 +38,7 @@ HEADERS += \
     main_scene.h \
     manage_task.h \
     meet.h \
+    nothing.h \
     task.h \
     widget.h
 
@@ -47,6 +51,7 @@ FORMS += \
     helpwidget.ui \
     main_scene.ui \
     meet.ui \
+    nothing.ui \
     task.ui \
     widget.ui
 

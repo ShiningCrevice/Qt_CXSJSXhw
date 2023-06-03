@@ -15,6 +15,8 @@
 #include <QStyleOption>
 #include <QDebug>
 extern bool darkMode;
+extern QDate startDate;
+extern int numOfWeek;
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent), ui(new Ui::Widget)
@@ -157,7 +159,7 @@ void Widget::initSpinBoxUI(QSpinBox* spinBox, QWidget* parent) {
 
 void Widget::on_startDateEdit_userDateChanged(const QDate &date)
 {
-
+    startDate = date;
 }
 
 void Widget::on_darkModeButton_clicked()
@@ -254,5 +256,11 @@ void Widget::on_backButton_clicked()
 {
     emit showMain();
     this->hide();
+}
+
+
+void Widget::on_totalWeeksEdit_valueChanged(int arg1)
+{
+    numOfWeek = arg1;
 }
 

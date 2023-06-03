@@ -3,6 +3,8 @@
 
 #include <QString>
 #include <vector>
+#include<QTime>
+#include<QDate>
 using namespace std;
 
 class abstract_con
@@ -10,7 +12,10 @@ class abstract_con
 public:
     abstract_con();
     QString name, classroom;
-    int start_hour, end_hour, start_min, end_min;
+    QTime startTime, endTime;
+    bool operator<(abstract_con &b) {
+        return startTime < b.startTime;
+    }
 };
 
 class ddl_con
@@ -18,15 +23,18 @@ class ddl_con
 public:
     ddl_con();
     QString name;
-    int year, month, day;
+    QDate date;
     int imp, ex_hour;
+    bool operator<(ddl_con &b) {
+        return date < b.date;
+    }
 };
 class meet_con : public abstract_con
 {
 public:
     meet_con();
     //QString name, classroom;
-    int year, month, day;
+    QDate date;
     //int start_hour, end_hour, start_min, end_min;
 };
 class class_con : public abstract_con

@@ -25,7 +25,7 @@
    <property name="font">
     <font>
      <family>华文中宋</family>
-     <pointsize>22</pointsize>
+     <pointsize>20</pointsize>
      <italic>false</italic>
      <bold>false</bold>
      <strikeout>false</strikeout>
@@ -63,6 +63,9 @@
      <pointsize>16</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -93,7 +96,7 @@ font: 22pt &quot;华文中宋&quot;;</string>
    <property name="font">
     <font>
      <family>华文中宋</family>
-     <pointsize>22</pointsize>
+     <pointsize>20</pointsize>
      <italic>false</italic>
      <bold>false</bold>
      <strikeout>false</strikeout>

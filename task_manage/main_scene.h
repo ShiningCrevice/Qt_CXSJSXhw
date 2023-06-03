@@ -7,6 +7,7 @@
 #include "event_con.h"
 #include "widget.h"
 #include"check.h"
+#include "nothing.h"
 
 namespace Ui {
 class main_scene;
@@ -22,7 +23,9 @@ public:
     Widget pax;
     task son_task;
     Check son_check;
+    Nothing son_nothing;
     void initScene();
+    void refresh();
 
 private slots:
     void on_pushButton_clicked();
@@ -31,6 +34,8 @@ private slots:
     void on_btnSet_clicked();
 
     void on_btnCheck_clicked();
+
+    void on_btnHelp_clicked();
 
 private:
     Ui::main_scene *ui;

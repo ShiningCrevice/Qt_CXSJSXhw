@@ -36,6 +36,8 @@ private slots:
 
     void on_backButton_clicked();
 
+    void on_totalWeeksEdit_valueChanged(int arg1);
+
 private:
     Ui::Widget *ui;
 

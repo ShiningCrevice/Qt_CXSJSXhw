@@ -24,6 +24,7 @@ public:
     void initScene();
     void paintEvent(QPaintEvent *event);
     void playGame();
+    void show_self();
 signals:
     void showMain();
 private slots:

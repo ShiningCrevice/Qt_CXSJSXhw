@@ -10,5 +10,10 @@
         <file>res/Image/plus.png</file>
         <file>res/Image/set.png</file>
         <file>res/Image/return.png</file>
+        <file>res/Image/dark-eye.png</file>
+        <file>res/Image/dark-help.png</file>
+        <file>res/Image/dark-plus.png</file>
+        <file>res/Image/dark-return.png</file>
+        <file>res/Image/dark-set.png</file>
     </qresource>
 </RCC>

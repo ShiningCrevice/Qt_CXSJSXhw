@@ -208,6 +208,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
      <pointsize>16</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
   <widget class="QComboBox" name="comboBox_2">
    <property name="geometry">
@@ -223,6 +226,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
      <family>华文中宋</family>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_3">
@@ -241,7 +247,7 @@ font: 22pt &quot;华文中宋&quot;;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">    dateEdit-&gt;setStyleSheet(&quot;background-color: rgb(255,255,255)&quot;);
+    <string notr="true">    background-color: rgb(255, 255, 255);
     dateEdit-&gt;setFont(font);</string>
    </property>
   </widget>
@@ -261,7 +267,7 @@ font: 22pt &quot;华文中宋&quot;;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">    dateEdit-&gt;setStyleSheet(&quot;background-color: rgb(255,255,255)&quot;);
+    <string notr="true">    background-color: rgb(255, 255, 255);
     dateEdit-&gt;setFont(font);</string>
    </property>
   </widget>
@@ -281,7 +287,7 @@ font: 22pt &quot;华文中宋&quot;;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">    dateEdit-&gt;setStyleSheet(&quot;background-color: rgb(255,255,255)&quot;);
+    <string notr="true">    background-color: rgb(255, 255, 255);
     dateEdit-&gt;setFont(font);</string>
    </property>
   </widget>
@@ -299,6 +305,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
   <widget class="QTimeEdit" name="timeEdit_2">
    <property name="geometry">
@@ -313,6 +322,9 @@ font: 22pt &quot;华文中宋&quot;;</string>
     <font>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">

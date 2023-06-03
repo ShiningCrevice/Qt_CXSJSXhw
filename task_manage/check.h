@@ -20,6 +20,7 @@ public:
     void initScene();
     void show_self();
     void playGame();
+    void refresh();
 signals:
     void showMain();
 
