@@ -1,5 +1,6 @@
 #include "nothing.h"
 #include "ui_nothing.h"
+#include "config.h"
 
 #include <QWidget>
 
@@ -11,6 +12,7 @@ Nothing::Nothing(QWidget *parent) :
     ui(new Ui::Nothing)
 {
     ui->setupUi(this);
+    initScene();
 }
 
 Nothing::~Nothing()
@@ -37,5 +39,12 @@ void Nothing::on_pushButton_clicked()
 {
     emit showMain();
     this->hide();
+}
+
+void Nothing::initScene()
+{
+    setFixedSize(GAME_WIDTH,GAME_HEIGHT);
+    setWindowTitle("DDL规划");
+    setWindowIcon(QIcon( GAME_ICON));
 }
 

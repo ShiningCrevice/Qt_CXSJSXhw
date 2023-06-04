@@ -15,6 +15,7 @@ public:
     explicit Nothing(QWidget *parent = nullptr);
     ~Nothing();
     void show_self();
+    void initScene();
 
 signals:
     void showMain();
