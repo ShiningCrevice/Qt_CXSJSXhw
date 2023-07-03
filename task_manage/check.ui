@@ -42,7 +42,7 @@
      <property name="font">
       <font>
        <family>华文中宋</family>
-       <pointsize>18</pointsize>
+       <pointsize>20</pointsize>
       </font>
      </property>
      <property name="text">
@@ -50,6 +50,9 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="margin">
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -162,15 +165,33 @@
          <property name="text">
           <string>名称</string>
          </property>
+         <property name="font">
+          <font>
+           <family>华文中宋</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
           <string>时间</string>
          </property>
+         <property name="font">
+          <font>
+           <family>华文中宋</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
           <string>倒计时</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>华文中宋</family>
+           <pointsize>11</pointsize>
+          </font>
          </property>
         </column>
        </widget>

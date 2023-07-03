@@ -51,4 +51,3 @@ void Nothing::initScene()
     setWindowTitle("DDL规划");
     setWindowIcon(QIcon( GAME_ICON));
 }
-

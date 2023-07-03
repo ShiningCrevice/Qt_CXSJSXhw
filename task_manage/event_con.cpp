@@ -17,6 +17,3 @@ meet_con::meet_con() : abstract_con()
 {
 
 }
-
-
-

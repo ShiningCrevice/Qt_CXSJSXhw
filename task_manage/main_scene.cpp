@@ -1,5 +1,6 @@
 #include "main_scene.h"
 #include "ui_main_scene.h"
+#include<QDebug>
 manage_task paxi;
 bool darkMode;
 QDate startDate;
@@ -21,9 +22,15 @@ void main_scene::get() {
         ui->btnHelp->setIcon(QIcon(":/res/res/Image/dark-help.png"));
         ui->btnSet->setIcon(QIcon(":/res/res/Image/dark-set.png"));
         ui->btnCheck->setIcon(QIcon(":/res/res/Image/dark-eye.png"));
-
+        ui->tabWidget->setStyleSheet("QTabBar::tab:selected{ font: 11pt \"华文中宋\";background-color: rgb(33,83,110); color: rgb(196, 230, 255); } "
+                                     "QTabBar::tab:!selected{ font: 11pt \"华文中宋\";background-color: rgb(8,12,41); color: rgb(196, 230, 255); }"
+                                     "QWidget{ font: 11pt \"华文中宋\";background-color: rgb(33,83,110); color: rgb(196, 230, 255); }");
         ui->dateLabel->setStyleSheet("color: rgb(196, 230, 255); background: transparent;");
-
+        QTableWidget *pointers[7] = {ui->monTableWidget, ui->tueTableWidget, ui->wedTableWidget, ui->thurTableWidget, ui->friTableWidget, ui->setTableWidget, ui->sunTableWidget};
+        //QLabel *pointers2[7] = {ui->label, ui->label_2, ui->label_3, ui->label_4, ui->label_5, ui->label_6, ui->label_7};
+        for (int i = 0; i < 7; i++) pointers[i]->horizontalHeader()->setStyleSheet("QHeaderView::section {background-color:rgb(8,12,41);}");
+        for (int i = 0; i < 7; i++) pointers[i]->verticalHeader()->setStyleSheet("QHeaderView::section {background-color:rgb(8,12,41);}");
+        //for (int i = 0; i < 7; i++) pointers2[i]->setStyleSheet("background-color: rgb(196, 230, 255");
     }
     else {
         QPalette palette;
@@ -46,6 +53,9 @@ void main_scene::get() {
         ui->btnSet->setIcon(QIcon(":/res/res/Image/set.png"));
         ui->btnCheck->setIcon(QIcon(":/res/res/Image/eye.png"));
 
+        ui->tabWidget->setStyleSheet("font: 11pt \"华文中宋\";");
+        QTableWidget *pointers[7] = {ui->monTableWidget, ui->tueTableWidget, ui->wedTableWidget, ui->thurTableWidget, ui->friTableWidget, ui->setTableWidget, ui->sunTableWidget};
+        for (int i = 0; i < 7; i++) pointers[i]->horizontalHeader()->setStyleSheet(""), pointers[i]->verticalHeader()->setStyleSheet("");
         ui->dateLabel->setStyleSheet("color: rgb(0, 0, 0); background: transparent;");
     }
 }
@@ -135,36 +145,9 @@ void main_scene::refresh()
     int weekday = current_date_time.date().dayOfWeek();
     for (auto elem : paxi.meet) {
         int delta = current_date_time.date().daysTo(elem.date);
-        switch (weekday + delta) {
-        case 1:
-            pointer = new abstract_con(elem);
-            tables[0].push_back(*pointer);
-            break;
-        case 2:
-            pointer = new abstract_con(elem);
-            tables[1].push_back(*pointer);
-            break;
-        case 3:
-            pointer = new abstract_con(elem);
-            tables[2].push_back(*pointer);
-            break;
-        case 4:
-            pointer = new abstract_con(elem);
-            tables[3].push_back(*pointer);
-            break;
-        case 5:
-            pointer = new abstract_con(elem);
-            tables[4].push_back(*pointer);
-            break;
-        case 6:
-            pointer = new abstract_con(elem);
-            tables[5].push_back(*pointer);
-            break;
-        case 7:
-            pointer = new abstract_con(elem);
-            tables[6].push_back(*pointer);
-            break;
-        }
+        int tmp = weekday + delta;
+        pointer = new abstract_con(elem);
+        tables[tmp - 1].push_back(*pointer);
     }
     for (auto elem : paxi.cla) {
         int weekday = startDate.dayOfWeek();
@@ -188,104 +171,28 @@ void main_scene::refresh()
     for (int i = 0; i < 7; i++) {
         sort(tables[i].begin(), tables[i].end());
     }
+    QTableWidget *pointers[7] = {ui->monTableWidget, ui->tueTableWidget, ui->wedTableWidget, ui->thurTableWidget, ui->friTableWidget, ui->setTableWidget, ui->sunTableWidget};
 
     int count = 0;
-    for (auto elem : tables[0]) {
-        ui->monTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->monTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->monTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->monTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->monTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[1]) {
-        ui->tueTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->tueTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->tueTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->tueTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->tueTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[2]) {
-        ui->wedTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->wedTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->wedTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->wedTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->wedTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[3]) {
-        ui->thurTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->thurTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->thurTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->thurTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->thurTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[4]) {
-        ui->friTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->friTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->friTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->friTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->friTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[5]) {
-        ui->setTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->setTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->setTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->setTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->setTableWidget->setItem(count, 3, p1);
-    }
-    count = 0;
-    for (auto elem : tables[6]) {
-        ui->sunTableWidget->insertRow(count);
-        QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
-        ui->sunTableWidget->setItem(count, 0, p1);
-        p1 = new QTableWidgetItem(elem.classroom);
-        ui->sunTableWidget->setItem(count, 1, p1);
-        QString str = elem.startTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str);
-        ui->sunTableWidget->setItem(count, 2, p1);
-        QString str2 = elem.endTime.toString("hh:mm");
-        p1 = new QTableWidgetItem(str2);
-        ui->sunTableWidget->setItem(count, 3, p1);
+    for (int i = 0; i < 7; i++) {
+        count = 0;
+        for (auto elem : tables[i]) {
+            pointers[i]->insertRow(count);
+            QTableWidgetItem *p1 = new QTableWidgetItem(elem.name);
+            pointers[i]->setItem(count, 0, p1);
+            p1 = new QTableWidgetItem(elem.classroom);
+            pointers[i]->setItem(count, 1, p1);
+            QString str = elem.startTime.toString("hh:mm");
+            p1 = new QTableWidgetItem(str);
+            pointers[i]->setItem(count, 2, p1);
+            QString str2 = elem.endTime.toString("hh:mm");
+            p1 = new QTableWidgetItem(str2);
+            pointers[i]->setItem(count, 3, p1);
+            count++;
+        }
+        //qDebug() << count;
+        if (count == 0)
+            pointers[i]->insertRow(count);
     }
 }
 
@@ -295,4 +202,3 @@ void main_scene::on_btnHelp_clicked()
     son_nothing.show_self();
     son_nothing.show();
 }
-

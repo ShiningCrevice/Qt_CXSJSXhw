@@ -82,21 +82,50 @@
    <item row="1" column="0">
     <widget class="QWidget" name="widget_28" native="true"/>
    </item>
-   <item row="5" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
+   <item row="2" column="0">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="dateLabel">
+        <property name="font">
+         <font>
+          <family>华文中宋</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QTabWidget" name="tabWidget">
@@ -106,269 +135,456 @@
        <pointsize>11</pointsize>
       </font>
      </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>6</number>
      </property>
      <widget class="QWidget" name="mon">
       <attribute name="title">
        <string>Mon</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="monTableWidget">
-         <property name="font">
-          <font>
-           <family>华文中宋</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="monTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>华文中宋</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tue">
       <attribute name="title">
        <string>Tue</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="tueTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="tueTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="wed">
       <attribute name="title">
        <string>Wed</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="wedTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="wedTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="thur">
       <attribute name="title">
        <string>Thur</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="thurTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="thurTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>华文中宋</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>华文中宋</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>华文中宋</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>华文中宋</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="fri">
       <attribute name="title">
        <string>Fri</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="friTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="friTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="sat">
       <attribute name="title">
        <string>Sat</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="setTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="setTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="sun">
       <attribute name="title">
        <string>Sun</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="sunTableWidget">
-         <row>
-          <property name="text">
-           <string/>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>事件名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>地点</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>开始时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>结束时间</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTableWidget" name="sunTableWidget">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>760</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>事件名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>地点</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>开始时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>结束时间</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>18</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>
@@ -494,50 +710,21 @@ padding-left: 14px;</string>
      </layout>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLabel" name="dateLabel">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
+   <item row="5" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
