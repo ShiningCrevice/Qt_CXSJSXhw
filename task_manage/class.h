@@ -7,6 +7,8 @@
 #include "config.h"
 #include "event_con.h"
 #include "manage_task.h"
+#include <QLineEdit>
+#include <QMessageBox>
 
 namespace Ui {
 class Class;

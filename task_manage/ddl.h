@@ -10,6 +10,8 @@
 #include "config.h"
 #include "event_con.h"
 #include "manage_task.h"
+#include <QMessageBox>
+#include "darkModeFunctions.h"
 
 namespace Ui {
 class DDL;

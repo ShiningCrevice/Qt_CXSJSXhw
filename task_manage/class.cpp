@@ -1,8 +1,5 @@
 #include "class.h"
 #include "ui_class.h"
-#include "manage_task.h"
-#include <QLineEdit>
-#include <QMessageBox>
 
 #include <darkModeFunctions.h>
 extern bool darkMode;
@@ -38,12 +35,11 @@ void Class::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-//    setStyleSheet("background-color: rgb(196,230,255);");
 }
-void Class::on_pushButton_clicked() // 取消
+void Class::on_pushButton_clicked()
 {
     emit showMain();
-    this->hide();            //  隐藏
+    this->hide();
 }
 class_con temp;
 
@@ -108,7 +104,11 @@ void Class::show_self() {
     ui->lineEdit_4->clear();
     ui->lineEdit_5->clear();
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         dark_label(ui->label);
         dark_label(ui->label_2);
         dark_label(ui->label_3);
@@ -120,7 +120,11 @@ void Class::show_self() {
         dark_button(ui->pushButton_2);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         light_label(ui->label);
         light_label(ui->label_2);
         light_label(ui->label_3);

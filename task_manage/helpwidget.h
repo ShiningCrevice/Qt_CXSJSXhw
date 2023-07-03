@@ -2,6 +2,8 @@
 #define HELPWIDGET_H
 
 #include <QWidget>
+#include "darkModeFunctions.h"
+#include "config.h"
 
 namespace Ui {
 class HelpWidget;
@@ -14,6 +16,8 @@ class HelpWidget : public QWidget
 public:
     explicit HelpWidget(QWidget *parent = nullptr);
     ~HelpWidget();
+    void get();
+    void initScene();
 
 private slots:
 

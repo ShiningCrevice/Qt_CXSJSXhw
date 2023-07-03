@@ -1,14 +1,5 @@
 #include "check.h"
 #include "ui_check.h"
-#include "config.h"
-#include<QStyleOption>
-#include"manage_task.h"
-#include<algorithm>
-#include<QDate>
-#include<QDateTime>
-#include<QDebug>
-#include<vector>
-#include<QBrush>
 
 extern bool darkMode;
 extern manage_task paxi;
@@ -42,17 +33,29 @@ void Check::initScene()
 void Check::show_self() {
     refresh();
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
-        ui->btnBack->setStyleSheet("background-color: rgb(64, 66, 68);");
-        ui->label->setStyleSheet("color: rgb(196, 230, 255);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        ui->btnBack->setStyleSheet("background-image: url(:/res/res/darkBg2.jpg);");
+        ui->label->setStyleSheet("color: rgb(196, 230, 255); background: transparent;");
         ui->btnBack->setIcon(QIcon(":/res/res/Image/dark-return.png"));
     }
     else {
-        setStyleSheet("backcolor-color: rgb(196, 230, 255);");
-        ui->btnBack->setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->label->setStyleSheet("color: rgb(0, 0, 0);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        ui->btnBack->setStyleSheet("background-image: url(:/res/res/lightBg2.jpg);");
+        ui->label->setStyleSheet("color: rgb(0, 0, 0); background: transparent;");
         ui->btnBack->setIcon(QIcon(":/res/res/Image/return.png"));
     }
+    static QMovie movie(":res/yinglang.gif");
+    movie.start();
+    ui->label_2->setMovie(&movie);
+    this->show();
 }
 
 void Check::on_btnBack_clicked()
@@ -60,9 +63,37 @@ void Check::on_btnBack_clicked()
     emit showMain();
     this->hide();
 }
+void Check::get1() {
+    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
+        QWidget* widget = ui->verticalLayout->itemAt(i)->widget();
+        if (widget && widget->inherits("TextAnimationWidget")) {
+            TextAnimationWidget* lineEdit = qobject_cast<TextAnimationWidget*>(widget);
+            delete lineEdit;
+        }
+    }
 
+    TextAnimationWidget *textWidget = new TextAnimationWidget(this);
+    textWidget->setText("该做的事都做完了？\n好,别到睡觉了才想起有\n该做的事没有做！");
+    textWidget->setStyleSheet("font: 16pt \"华文中宋\";color: rgb(0,0,0); background: transparent;");
+    ui->verticalLayout->addWidget(textWidget);
+}
+void Check::get2() {
+    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
+        QWidget* widget = ui->verticalLayout->itemAt(i)->widget();
+        if (widget && widget->inherits("TextAnimationWidget")) {
+            TextAnimationWidget* lineEdit = qobject_cast<TextAnimationWidget*>(widget);
+            delete lineEdit;
+        }
+    }
+
+    TextAnimationWidget *textWidget = new TextAnimationWidget(this);
+    textWidget->setText("你有紧急的ddl要完成，\n看来你有一段时间不能\n上线了呢~");
+    textWidget->setStyleSheet("font: 16pt \"华文中宋\";color: rgb(0,0,0); background: transparent;");
+    ui->verticalLayout->addWidget(textWidget);
+}
 void Check::refresh()
 {
+    int flag = 0;
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     sort(paxi.ddl.begin(), paxi.ddl.end());
@@ -83,6 +114,7 @@ void Check::refresh()
                 QFont nullFont;
                 p1->setFont(nullFont);
                 p1->setBackground(nullColor);
+                flag = 1;
             }
             ui->tableWidget->setItem(count, 0, p1);
             QString str = elem.date.toString("MM-dd");
@@ -97,5 +129,6 @@ void Check::refresh()
             count++;
         }
     }
-
+    if(flag == 1) get2();
+    else get1();
 }

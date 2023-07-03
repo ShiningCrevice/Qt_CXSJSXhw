@@ -2,19 +2,56 @@
 #include "ui_main_scene.h"
 manage_task paxi;
 bool darkMode;
-#include "widget.h"
-#include "nothing.h"
-#include<QScrollBar>
-#include<QDateTime>
-#include<QPalette>
-#include<QPushButton>
-#include<QDate>
-#include<QTime>
 QDate startDate;
 int numOfWeek;
+void main_scene::get() {
+    if (darkMode) {
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        refresh();
+
+        ui->btnPlus->setStyleSheet("background-image: url(:/res/res/darkBg2.jpg); color: rgb(196, 230, 255); border-radius: 5px;padding-left: 14px;");
+        ui->btnCheck->setStyleSheet("background-image: url(:/res/res/darkBg2.jpg); color: rgb(196, 230, 255); border-radius: 5px;padding-left: 14px;");
+        ui->btnSet->setStyleSheet("background-image: url(:/res/res/darkBg2.jpg);");
+        ui->btnHelp->setStyleSheet("background-image: url(:/res/res/darkBg2.jpg);");
+        ui->btnPlus->setIcon(QIcon(":/res/res/Image/dark-plus.png"));
+        ui->btnHelp->setIcon(QIcon(":/res/res/Image/dark-help.png"));
+        ui->btnSet->setIcon(QIcon(":/res/res/Image/dark-set.png"));
+        ui->btnCheck->setIcon(QIcon(":/res/res/Image/dark-eye.png"));
+
+        ui->dateLabel->setStyleSheet("color: rgb(196, 230, 255); background: transparent;");
+
+    }
+    else {
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        refresh();
+
+        ui->btnPlus->setStyleSheet("background-image: url(:/res/res/lightBg2.jpg); border-radius: 5px;"
+                                   "color: rgb(0, 0, 0);"
+                                   "padding-left: 14px");
+        ui->btnCheck->setStyleSheet("background-image: url(:/res/res/lightBg2.jpg); border-radius: 5px;"
+                                    "color: rgb(0, 0, 0);"
+                                    "padding-left: 14px");
+        ui->btnSet->setStyleSheet("background-image: url(:/res/res/lightBg2.jpg);");
+        ui->btnHelp->setStyleSheet("background-image: url(:/res/res/lightBg2.jpg);");
+        ui->btnPlus->setIcon(QIcon(":/res/res/Image/plus.png"));
+        ui->btnHelp->setIcon(QIcon(":/res/res/Image/help.png"));
+        ui->btnSet->setIcon(QIcon(":/res/res/Image/set.png"));
+        ui->btnCheck->setIcon(QIcon(":/res/res/Image/eye.png"));
+
+        ui->dateLabel->setStyleSheet("color: rgb(0, 0, 0); background: transparent;");
+    }
+}
 main_scene::main_scene(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::main_scene)
+    ui(new Ui::mainscene)
 {
     ui->setupUi(this);
     initScene();
@@ -25,11 +62,8 @@ main_scene::main_scene(QWidget *parent) :
     connect(&son_nothing,SIGNAL(showMain()),this,SLOT(show_myself()));
 
     QPalette pal(this->palette());
-    pal.setColor(QPalette::Window, QColor(196, 230, 255));
     this->setAutoFillBackground(true);
     this->setPalette(pal);
-    ui->btnSet->setStyleSheet("background-color: rgb(196, 230, 255);");
-    ui->btnHelp->setStyleSheet("background-color: rgb(196, 230, 255);");
 
     ui->monTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tueTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -54,50 +88,11 @@ void main_scene::on_pushButton_clicked()
 {
     this->hide();
     son_task.show_self();
-    son_task.show();
 }
 
 void main_scene::show_myself()
 {
-    refresh();
-    if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
-        ui->btnPlus->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 5px;padding-left: 14px;");
-        ui->btnCheck->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 5px;padding-left: 14px;");
-        ui->btnSet->setStyleSheet("background-color: rgb(64, 66, 68);");
-        ui->btnHelp->setStyleSheet("background-color: rgb(64, 66, 68);");
-//        ui->tabWidget->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(192, 194, 195);");
-        ui->dateLabel->setStyleSheet("color: rgb(196, 230, 255);");
-        ui->btnPlus->setIcon(QIcon(":/res/res/Image/dark-plus.png"));
-        ui->btnHelp->setIcon(QIcon(":/res/res/Image/dark-help.png"));
-        ui->btnSet->setIcon(QIcon(":/res/res/Image/dark-set.png"));
-        ui->btnCheck->setIcon(QIcon(":/res/res/Image/dark-eye.png"));
-    }
-    else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->btnPlus->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,"
-                                   "stop: 0 rgb(209, 255, 202),"
-                                   "stop: 0.495 rgb(170, 255, 127),"
-                                   "stop: 0.505 rgb(170, 255, 127), "
-                                   "stop: 1 rgb(209, 255, 202)); border-radius: 5px;"
-                                   "color: rgb(0, 0, 0);"
-                                   "padding-left: 14px");
-        ui->btnCheck->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,"
-                                    "stop: 0 rgb(209, 255, 202),"
-                                    "stop: 0.495 rgb(170, 255, 127),"
-                                    "stop: 0.505 rgb(170, 255, 127), "
-                                    "stop: 1 rgb(209, 255, 202)); border-radius: 5px;"
-                                    "color: rgb(0, 0, 0);"
-                                    "padding-left: 14px");
-        ui->btnSet->setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->btnHelp->setStyleSheet("background-color: rgb(196, 230, 255);");
-//        ui->tabWidget->setStyleSheet("background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);");
-        ui->dateLabel->setStyleSheet("color: rgb(0, 0, 0);");
-        ui->btnPlus->setIcon(QIcon(":/res/res/Image/plus.png"));
-        ui->btnHelp->setIcon(QIcon(":/res/res/Image/help.png"));
-        ui->btnSet->setIcon(QIcon(":/res/res/Image/set.png"));
-        ui->btnCheck->setIcon(QIcon(":/res/res/Image/eye.png"));
-    }
+    get();
     this->show();
 }
 
@@ -106,6 +101,7 @@ void main_scene::initScene()
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
     setWindowTitle("DDL规划");
     setWindowIcon(QIcon( GAME_ICON));
+    get();
 }
 
 void main_scene::on_btnSet_clicked()
@@ -119,12 +115,11 @@ void main_scene::on_btnCheck_clicked()
 {
     this->hide();
     son_check.show_self();
-    son_check.show();
 }
 
 void main_scene::refresh()
 {
-    vector<abstract_con> tables[10];
+    vector<abstract_con> tables[7];
     for (int i = 0; i < 7; i++) {
         tables[i].clear();
     }

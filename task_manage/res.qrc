@@ -15,5 +15,15 @@
         <file>res/Image/dark-plus.png</file>
         <file>res/Image/dark-return.png</file>
         <file>res/Image/dark-set.png</file>
+        <file>res/PadMade_minor.png</file>
+        <file>res/lightBg2.jpg</file>
+        <file>res/lightBg.jpg</file>
+        <file>res/darkBg2.jpg</file>
+        <file>res/darkBg.jpg</file>
+        <file>res/Image/dark-del.png</file>
+        <file>res/Image/del.png</file>
+        <file>res/pao.png</file>
+        <file>yinglang.gif</file>
+        <file>res/33%.png</file>
     </qresource>
 </RCC>

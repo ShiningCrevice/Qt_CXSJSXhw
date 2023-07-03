@@ -23,6 +23,7 @@ SOURCES += \
     meet.cpp \
     nothing.cpp \
     task.cpp \
+    textanimationwidget.cpp \
     widget.cpp
 
 HEADERS += \
@@ -40,6 +41,7 @@ HEADERS += \
     meet.h \
     nothing.h \
     task.h \
+    textanimationwidget.h \
     widget.h
 
 FORMS += \

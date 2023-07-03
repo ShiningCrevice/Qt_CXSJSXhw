@@ -1,5 +1,6 @@
 #ifndef MANAGE_TASK_H
 #define MANAGE_TASK_H
+#include <QMessageBox>
 #include "event_con.h"
 
 class manage_task {

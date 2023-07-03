@@ -7,6 +7,13 @@
 #include "delete.h"
 #include "add.h"
 #include "event_con.h"
+#include "textanimationwidget.h"
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPalette>
+#include <QMovie>
+#include <QDebug>
+#include <QApplication>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class task; }
@@ -22,6 +29,7 @@ public:
     void initScene();
     void paintEvent(QPaintEvent *event);
     void show_self();
+    void get();
 
     Add son_add;
     Delete son_del;

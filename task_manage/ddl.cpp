@@ -1,8 +1,5 @@
 #include "ddl.h"
 #include "ui_ddl.h"
-#include <QMessageBox>
-
-#include "darkModeFunctions.h"
 extern bool darkMode;
 
 DDL::DDL(QWidget *parent) :
@@ -75,7 +72,11 @@ void DDL::on_dateEdit_userDateChanged(const QDate &date)
 void DDL::show_self() {
     ui->lineEdit_3->clear();
     if (darkMode) {
-        setStyleSheet("background-color:rgb(46, 47, 48);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         dark_label(ui->label);
         dark_label(ui->label_2);
         dark_label(ui->label_3);
@@ -86,7 +87,11 @@ void DDL::show_self() {
         dark_button(ui->pushButton_2);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         light_label(ui->label);
         light_label(ui->label_2);
         light_label(ui->label_3);

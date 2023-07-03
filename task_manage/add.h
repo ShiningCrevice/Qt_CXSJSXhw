@@ -8,6 +8,7 @@
 #include "class.h"
 #include "ddl.h"
 #include "event_con.h"
+#include "config.h"
 
 namespace Ui {
 class Add;

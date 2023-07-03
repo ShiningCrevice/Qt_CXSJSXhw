@@ -1,7 +1,9 @@
 #ifndef NOTHING_H
 #define NOTHING_H
 
+#include "config.h"
 #include <QWidget>
+#include "darkModeFunctions.h"
 
 namespace Ui {
 class Nothing;

@@ -1,6 +1,5 @@
 #include "add.h"
 #include "ui_add.h"
-#include "config.h"
 
 #include "darkModeFunctions.h"
 extern bool darkMode;
@@ -49,7 +48,6 @@ void Add::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-//    setStyleSheet("background-color: rgb(196,230,255);");
 }
 
 void Add::on_pushButton_2_clicked()
@@ -72,13 +70,21 @@ void Add::on_pushButton_2_clicked()
 
 void Add::show_self() {
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         dark_label(ui->label);
         dark_button(ui->pushButton);
         dark_button(ui->pushButton_2);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
         light_label(ui->label);
         light_button(ui->pushButton);
         light_button(ui->pushButton_2);

@@ -1,5 +1,4 @@
 #include "manage_task.h"
-#include <QMessageBox>
 manage_task::manage_task()
 {
 

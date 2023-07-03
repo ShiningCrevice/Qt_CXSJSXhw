@@ -9,11 +9,29 @@ task::task(QWidget *parent)
 {
     ui->setupUi(this);
     initScene();
+    static QMovie movie(":res/yinglang.gif");
+    movie.start();
+    ui->label->setMovie(&movie);
+    ui->label->show();
     connect(&son_add,SIGNAL(showMain()),this,SLOT(show_myself()));
     connect(&son_del,SIGNAL(showMain()),this,SLOT(show_myself()));
 }
 
 
+void task::get() {
+    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
+        QWidget* widget = ui->verticalLayout->itemAt(i)->widget();
+        if (widget && widget->inherits("TextAnimationWidget")) {
+            TextAnimationWidget* lineEdit = qobject_cast<TextAnimationWidget*>(widget);
+            delete lineEdit;
+        }
+    }
+
+    TextAnimationWidget *textWidget = new TextAnimationWidget(this);
+    textWidget->setText("是你啊，要做什么？");
+    textWidget->setStyleSheet("font: 16pt \"华文中宋\";color: rgb(0,0,0); background: transparent;");
+    ui->verticalLayout->addWidget(textWidget);
+}
 void task::on_pushButton_clicked()
 {
     this->hide();
@@ -35,8 +53,11 @@ void task::on_pushButton_3_clicked()
     this->hide();
 }
 
-void task::show_myself()
-{
+void task::show_myself() {
+    get();
+    static QMovie movie(":res/yinglang.gif");
+    movie.start();
+    ui->label->setMovie(&movie);
     this->show();
 }
 
@@ -58,38 +79,33 @@ void task::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-//    setStyleSheet("background-color: rgb(196,230,255);");
 }
 
 void task::show_self() {
+    get();
+    ui->pushButton->setStyleSheet("	background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1, stop: 0 rgb(209, 255, 202), stop: 0.495 rgb(170, 255, 127),stop: 0.505 rgb(170, 255, 127), stop: 1 rgb(209, 255, 202)); border-radius: 15px;");
+    ui->pushButton->setIcon(QIcon(":/res/res/Image/plus.png"));
+    ui->pushButton_2->setStyleSheet("	background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1, stop: 0 rgb(209, 255, 202), stop: 0.495 rgb(170, 255, 127),stop: 0.505 rgb(170, 255, 127), stop: 1 rgb(209, 255, 202)); border-radius: 15px;");
+    ui->pushButton_2->setIcon(QIcon(":/res/res/Image/del.png"));
+    ui->pushButton_3->setStyleSheet("	background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1, stop: 0 rgb(209, 255, 202), stop: 0.495 rgb(170, 255, 127),stop: 0.505 rgb(170, 255, 127), stop: 1 rgb(209, 255, 202)); border-radius: 15px;");
+    ui->pushButton_3->setIcon(QIcon(":/res/res/Image/return.png"));
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
-        ui->pushButton->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 15px;");
-        ui->pushButton_2->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 15px;");
-        ui->pushButton_3->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 15px;");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->pushButton->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  "
-                                      "stop: 0 rgb(209, 255, 202),"
-                                      "stop: 0.495 rgb(170, 255, 127),"
-                                      "stop: 0.505 rgb(170, 255, 127), "
-                                      "stop: 1 rgb(209, 255, 202));"
-                                        "border: none;"
-                                        "border-radius: 15px;");
-        ui->pushButton_2->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  "
-                                      "stop: 0 rgb(209, 255, 202),"
-                                      "stop: 0.495 rgb(170, 255, 127),"
-                                      "stop: 0.505 rgb(170, 255, 127), "
-                                      "stop: 1 rgb(209, 255, 202));"
-                                      "border: none;"
-                                      "border-radius: 15px;");
-        ui->pushButton_3->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  "
-                                      "stop: 0 rgb(209, 255, 202),"
-                                      "stop: 0.495 rgb(170, 255, 127),"
-                                      "stop: 0.505 rgb(170, 255, 127), "
-                                      "stop: 1 rgb(209, 255, 202));"
-                                      "border: none;"
-                                      "border-radius: 15px;");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
     }
+    static QMovie movie(":res/yinglang.gif");
+    movie.start();
+    ui->label->setMovie(&movie);
+    //ui->label->show();
+    this->show();
 }

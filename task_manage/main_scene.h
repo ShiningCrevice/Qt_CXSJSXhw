@@ -6,11 +6,18 @@
 #include "manage_task.h"
 #include "event_con.h"
 #include "widget.h"
-#include"check.h"
+#include "check.h"
 #include "nothing.h"
-
+#include "widget.h"
+#include <QScrollBar>
+#include <QDateTime>
+#include <QPalette>
+#include <QPushButton>
+#include <QDate>
+#include <QTime>
+#include <QMovie>
 namespace Ui {
-class main_scene;
+class mainscene;
 }
 
 class main_scene : public QWidget
@@ -24,6 +31,7 @@ public:
     task son_task;
     Check son_check;
     Nothing son_nothing;
+    void get();
     void initScene();
     void refresh();
 
@@ -38,7 +46,7 @@ private slots:
     void on_btnHelp_clicked();
 
 private:
-    Ui::main_scene *ui;
+    Ui::mainscene *ui;
 };
 
 #endif // MAIN_SCENE_H

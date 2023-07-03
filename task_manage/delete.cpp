@@ -1,7 +1,5 @@
 #include "delete.h"
 #include "ui_delete.h"
-#include "manage_task.h"
-#include <QMessageBox>
 
 extern bool darkMode;
 
@@ -44,7 +42,6 @@ void Delete::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-//    setStyleSheet("background-color: rgb(196,230,255);");
 }
 void Delete::on_pushButton_2_clicked()
 {
@@ -74,29 +71,23 @@ void Delete::on_pushButton_3_clicked()
 
 void Delete::show_self() {
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
-        ui->label->setStyleSheet("color: rgb(196, 230, 255); font: 22pt \"华文中宋\";");
-        ui->pushButton_2->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 15px;");
-        ui->pushButton_3->setStyleSheet("background-color: rgb(64, 66, 68); color: rgb(196, 230, 255); border-radius: 15px;");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        dark_button(ui->pushButton_2);
+        dark_button(ui->pushButton_3);
+        dark_label(ui->label);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->label->setStyleSheet("color: rgb(0, 0, 0); font: 22pt \"华文中宋\";");
-        ui->pushButton_2->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  "
-                                      "stop: 0 rgb(209, 255, 202),"
-                                      "stop: 0.495 rgb(170, 255, 127),"
-                                      "stop: 0.505 rgb(170, 255, 127), "
-                                      "stop: 1 rgb(209, 255, 202));"
-                                        "border: none;"
-                                        "border-radius: 15px;"
-                                        "color: rgb(0, 0, 0);");
-        ui->pushButton_3->setStyleSheet("background-color: qlineargradient(spread:pad,  x1:0, x2:0, y1:0, y2:1,  "
-                                        "stop: 0 rgb(209, 255, 202),"
-                                        "stop: 0.495 rgb(170, 255, 127),"
-                                        "stop: 0.505 rgb(170, 255, 127), "
-                                        "stop: 1 rgb(209, 255, 202));"
-                                        "border: none;"
-                                        "border-radius: 15px;"
-                                        "color: rgb(0, 0, 0);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        light_button(ui->pushButton_2);
+        light_button(ui->pushButton_3);
+        light_label(ui->label);
     }
 }

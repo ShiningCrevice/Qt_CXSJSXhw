@@ -9,6 +9,10 @@
 #include "event_con.h"
 #include "manage_task.h"
 #include <QLineEdit>
+#include <QMessageBox>
+#include <QDate>
+#include <QDateEdit>
+#include "darkModeFunctions.h"
 
 namespace Ui {
 class Meet;

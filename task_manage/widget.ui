@@ -38,7 +38,7 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>440</y>
+     <y>460</y>
      <width>141</width>
      <height>51</height>
     </rect>
@@ -68,220 +68,151 @@ border-radius: 15px;</string>
     <string>返回主界面</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLabel" name="startDateLabel">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>90</y>
-     <width>361</width>
-     <height>241</height>
+     <x>200</x>
+     <y>100</y>
+     <width>129</width>
+     <height>35</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="mainLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
-      <item>
-       <widget class="QLabel" name="startDateLabel">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;学期开始日期&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QDateEdit" name="startDateEdit"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="totalWeeksLabel">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;学期总周数&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="totalWeeksEdit"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="darkModeLabel">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;界面颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="darkModeButton">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>暗色模式</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="helpLabel">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;帮助&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCommandLinkButton" name="helpButton">
-        <property name="font">
-         <font>
-          <family>华文中宋</family>
-          <pointsize>16</pointsize>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>点击查看帮助文档</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;学期开始日期&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="startDateEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>100</y>
+     <width>154</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalWeeksLabel">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>180</y>
+     <width>108</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;学期总周数&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="totalWeeksEdit">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>180</y>
+     <width>56</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="darkModeLabel">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>260</y>
+     <width>86</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;界面颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="darkModeButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>260</y>
+     <width>109</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>暗色模式</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="helpLabel">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>340</y>
+     <width>43</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;帮助&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="helpButton">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>340</y>
+     <width>211</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文中宋</family>
+     <pointsize>16</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>点击查看帮助文档</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -1,10 +1,5 @@
 #include "nothing.h"
 #include "ui_nothing.h"
-#include "config.h"
-
-#include <QWidget>
-
-#include "darkModeFunctions.h"
 extern bool darkMode;
 
 Nothing::Nothing(QWidget *parent) :
@@ -22,14 +17,23 @@ Nothing::~Nothing()
 
 void Nothing::show_self() {
     if (darkMode) {
-        setStyleSheet("background-color: rgb(46, 47, 48);");
-        ui->textBrowser->setStyleSheet("font: 12pt \"Microsoft YaHei UI\"; color: rgb(196, 230, 255); background-color: rgb(64, 66, 68);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/darkBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+
+        ui->textBrowser->setStyleSheet("font: 16pt \"华文中宋\"; color: rgb(196,230,255); background: transparent;");
         dark_label(ui->label);
         dark_button(ui->pushButton);
     }
     else {
-        setStyleSheet("background-color: rgb(196, 230, 255);");
-        ui->textBrowser->setStyleSheet("font: 12pt \"Microsoft YaHei UI\"; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);");
+        QPalette palette;
+        QPixmap backgroundImage(":/res/res/lightBg.jpg");
+        palette.setBrush(this->backgroundRole(), QBrush(backgroundImage));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+        ui->textBrowser->setStyleSheet("font: 16pt \"华文中宋\"; color: rgb(0,0,0); background: transparent;");
         light_label(ui->label);
         light_button(ui->pushButton);
     }

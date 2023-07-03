@@ -9,6 +9,9 @@
 #include <QLayout>
 #include "event_con.h"
 #include <vector>
+#include "manage_task.h"
+#include <QMessageBox>
+#include "darkModeFunctions.h"
 using namespace std;
 
 namespace Ui {
